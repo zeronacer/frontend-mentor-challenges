@@ -1,0 +1,6 @@
+{
+  "name": "learning-css",
+  "author": "Maximilian Grabau",
+  "private": true,
+  "workspaces": ["interactive-rating-component"]
+}
