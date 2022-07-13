@@ -1,0 +1,114 @@
+body {
+  font-size: 14px;
+  background-color: hsl(30, 38%, 92%);
+  height: 100vh;
+}
+main {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.product-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 0.6rem;
+  max-width: 33%;
+  color: hsl(212, 21%, 14%);
+}
+.product-card .card-image {
+  margin: 0;
+  background-image: url("../images/image-product-desktop.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 0.6rem 0 0 0.6rem;
+}
+.product-card .card-content {
+  padding: 2rem;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.product-card .card-content span.subhead {
+  text-transform: uppercase;
+  color: hsl(228, 12%, 48%);
+  letter-spacing: 0.4rem;
+}
+.product-card .card-content .heading {
+  font-family: 'Fraunces', serif;
+  font-size: 2rem;
+  margin: 0;
+}
+.product-card .card-content p.description {
+  color: hsl(228, 12%, 48%);
+  margin: 0;
+  line-height: 1.5rem;
+}
+.product-card .card-content .price-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.product-card .card-content .price-wrapper span.price {
+  font-family: 'Fraunces', serif;
+  font-size: 2rem;
+  color: hsl(158, 36%, 37%);
+}
+.product-card .card-content .price-wrapper span.old-price {
+  text-decoration: line-through;
+}
+.product-card .card-content button.cart-button {
+  width: 100%;
+  border-radius: 0.6rem;
+  background-color: hsl(158, 36%, 37%);
+  color: hsl(0, 0%, 100%);
+  outline: none;
+  border: none;
+  padding: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  justify-content: center;
+  transition: background-color 200ms;
+}
+.product-card .card-content button.cart-button:hover,
+.product-card .card-content button.cart-button:focus {
+  cursor: pointer;
+  background-color: hsl(212, 21%, 14%);
+}
+.attribution {
+  font-family: 'Montserrat', sans-serif;
+  margin: 3rem 0;
+  font-size: 0.8rem;
+}
+.attribution a {
+  color: hsl(158, 36%, 37%);
+}
+.attribution a:hover,
+.attribution a:focus {
+  cursor: pointer;
+  color: hsl(212, 21%, 14%);
+}
+@media only screen and (max-width: 600px) {
+  .product-card {
+    grid-template-columns: 1fr;
+    grid-template-rows: 16rem 1fr;
+    max-width: 95%;
+  }
+  .product-card .card-image {
+    background-image: url("../images/image-product-mobile.jpg");
+    border-radius: 0.6rem 0.6rem 0 0;
+  }
+  .product-card .card-content {
+    gap: 1rem;
+  }
+  .product-card .card-content .price-wrapper {
+    margin-top: 1.5rem;
+  }
+}
