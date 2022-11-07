@@ -1,0 +1,75 @@
+@bright-orange: hsl(31, 77%, 52%);
+@dark-cyan: hsl(184, 100%, 22%);
+@very-dark-cyan: hsl(179, 100%, 13%);
+@transparent-white: hsla(0, 0%, 100%, 0.75);
+@very-light-gray: hsl(0, 0%, 95%);
+
+@font-lexend: 'Lexend Deca', sans-serif;
+@font-bigshoulders: 'Big Shoulders Display', cursive;
+
+@border-radius: 10px;
+
+html, body {
+    font-family: @font-lexend;
+    font-size: 15px;
+}
+
+main {
+    display: grid;
+    max-width: 85vw;
+    margin: 1rem auto;
+}
+
+.card {
+    color: @transparent-white;
+    padding: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    // order-dependant styles
+    &:first-child {
+        border-radius: @border-radius @border-radius 0 0;
+    }
+    &:last-child {
+        border-radius: 0 0 @border-radius @border-radius;
+    }
+    // modifiers
+    &.card--bg-orange {
+        background-color: @bright-orange;
+        .button {
+            color: @bright-orange;
+        }
+    }
+    &.card--bg-cyan {
+        background-color: @dark-cyan;
+        .button {
+            color: @dark-cyan;
+        }
+    }
+    &.card--bg-dark-cyan {
+        background-color: @very-dark-cyan;
+        .button {
+            color: @very-dark-cyan;
+        }
+    }
+    // children
+    .card__heading {
+        color: @very-light-gray;
+        font-family: @font-bigshoulders;
+        text-transform: uppercase;
+        font-size: 3rem;
+    }
+    .card__image {
+        width: min-content;
+    }
+}
+
+.button {
+    display: block;
+    width: fit-content;
+    background-color: @very-light-gray;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    text-decoration: none;
+}
